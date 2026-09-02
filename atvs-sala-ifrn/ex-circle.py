@@ -1,9 +1,15 @@
-class Circle:
-    def __init__(self, x, y, radius):
+class Point:
+    def __init__(self, x, y):
         self.x = x
         self.y = y
-        self.radius = int(radius)
 
-    def point_in_circle = 
+class Circle:
+    def __init__(self, center, radius):
+        self.center = center
+        self.radius = int(radius) 
 
-circulo = Circle(150, 100, 75)
+point = Point(150, 100)
+circulo1 = Circle(point, 75)
+
+def point_in_circle(circle, point):
+    if point in :
