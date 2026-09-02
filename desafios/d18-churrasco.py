@@ -21,7 +21,6 @@ class Churrasco:
         carne_total = consumo_pessoa * self.quantidade_pessoas
         preco_total = preco_kg_carne * carne_total
         preco_pessoa = preco_total / self.quantidade_pessoas
-
         
         return f'Preço da carne: {preco_kg_carne}/kg;\nConsumo por pessoa: {consumo_pessoa};\nQuantidade de pessoas: {self.quantidade_pessoas};\nCarne total necessária: {carne_total};\nPreço total da carne: {preco_total:.2f};\nPreço por pessoa: {preco_pessoa:.2f}.'
 
