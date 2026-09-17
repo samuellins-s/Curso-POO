@@ -1,3 +1,5 @@
+# QUESTÃO 01
+
 class Aluno:
     def __init__(self, nome: str, matricula: str):
         self.nome = nome
@@ -37,6 +39,7 @@ if aluno2.aprovado():
 if aluno3.aprovado():
     print(f'Aluno(a) {aluno3} aprovado(a)!!!')
 
+# QUESTÃO 02
 
 class Retangulo:
     def __init__(self, base, altura):
@@ -54,6 +57,7 @@ class Retangulo:
             return NotImplemented
         return self.base == other.base and self.altura == other.altura
 
+# QUESTÃO 03
 
 class Data:
     def __init__(self, dia, mes, ano):
