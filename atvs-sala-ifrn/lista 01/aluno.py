@@ -1,12 +1,3 @@
-'''
-Vamos lá...
-criar a classe aluno
-    definir init e parametros
-    criar metodos
-        como criar metodos que acessem variaveis externas?
-
-'''
-
 class Aluno:
     def __init__(self, nome: str, matricula: str):
         self.nome = nome
