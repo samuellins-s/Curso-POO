@@ -25,6 +25,8 @@ class CarrinhoDeCompras:
 
 
 coquinha = Produto('Coca-Cola Espumante', 8.99)
-print(coquinha)
+churruzinho = Produto('Churros', 11.80)
+
 carrinho = CarrinhoDeCompras()
 carrinho.adicionar(coquinha)
+carrinho.adicionar(churruzinho)
