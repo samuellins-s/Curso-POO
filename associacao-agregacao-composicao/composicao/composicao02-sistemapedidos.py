@@ -3,34 +3,24 @@ class Produto:
         self.nome = nome
         self.preco = preco
 
-class ItemPedido:
+
+class ItemPedido: # tem produto e sua quantidade
     def __init__(self, produto: Produto, quantidade: int) -> None:
-        self.produto = produto # agregacao
+        self.produto = produto
         self.quantidade = quantidade
 
-    @property
     def subtotal(self) -> float:
         return self.produto * self.quantidade
 
-class Pedido:
-    def __init__(self, cliente: "Cliente") -> None:
+
+class Pedido: # pedido tem itens -> valor total dos itens
+    def __init__(self, cliente: Cliente) -> None:
         self.cliente = cliente
         self._itens: list[ItemPedido] = []
 
-    def adicionar(self, produto: Produto, quantidade: int) -> None:
-        item = ItemPedido(produto, quantidade)
-        self._itens.append(item)
+    def adicionar(self):
+        pass
 
-    @property
-    def total(self) -> float:
-        for item in self._itens:
-            total_itens = sum(item.subtotal)
-        return total_itens
+class Cliente: # cliente tem pedidos -> acumula pedidos (append lista)
+    pass 
 
-class Cliente:
-    def __init__(self, nome: str) -> None:
-        self.nome = nome
-        self._pedidos: list[Pedido] = []
-
-    def fazer_pedido(self, pedido: Pedido) -> None:
-        self._pedidos.append(pedido)
