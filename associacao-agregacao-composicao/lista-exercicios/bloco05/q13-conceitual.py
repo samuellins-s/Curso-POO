@@ -108,10 +108,36 @@ class Livro:
 
 # vamaislonge.ver_capitulos()
 
+
+# 1. Universidade e Curso
 class Curso:
-    def __init__(self, nome: str):
+    def __init__(self, nome: str) -> None:
         self.nome = nome
 
 
 class Universidade:
-    pass
+    def __init__(self, nome: str) -> None:
+        self.nome = nome
+        self.cursos: list[Curso] = []
+
+    def adicionar_curso(self, nome: str) -> None:
+        self.cursos.append(Curso(nome))
+
+    def remover_curso(self, nome: str) -> None:
+        for curso in self.cursos:
+            if nome == curso.nome:
+                self.cursos.remove(curso)
+                print(f'O curso {curso.nome} foi removido com SUCESSO!')
+            
+            else:
+                print(f'O curso {curso.nome} não existe!')
+
+    def ver_cursos(self) -> None:
+        print(f'\n========== Cursos ofertados pela Instituição: {self.nome} ==========\n')
+        for curso in self.cursos:
+            print(curso.nome)
+
+
+ufrn = Universidade('Universidade do Rio Grande do Norte')
+ufrn.adicionar_curso('Tecnologia da Informação')
+ufrn.ver_cursos()
