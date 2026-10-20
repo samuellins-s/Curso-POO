@@ -39,7 +39,7 @@ class Banda:
         for musico in self.musicos:
             print(f'{musico.nome} --- {musico.instrumento}')
 
-    def comecar_musica(self):
+    def comecar_musica(self) -> None:
         print('\n1, 2, 3, e...!')
         for musico in self.musicos:
             print(musico.tocar())
@@ -87,6 +87,9 @@ class Livro:
             if numero_capitulo == capitulo.numero:
                 self.capitulos.remove(capitulo)
                 print(f'Capítulo de número {capitulo.numero} removido com SUCESSO!')
+
+            else:
+                print(f'Capítulo de numero {capitulo.numero} NÃO encontrado!')
 
     def ver_capitulos(self) -> None:
         for capitulo in self.capitulos:
