@@ -99,11 +99,19 @@ class Livro:
         return f'Título do livro: {self.titulo} --- Autor: {self.autor} --- Ano de lançamento: {self.ano_lancamento}'
 
 
-vamaislonge = Livro('Vá mais longe', 'Augusto Cury', 2021)
-print(vamaislonge)
+# vamaislonge = Livro('Vá mais longe', 'Augusto Cury', 2021)
+# print(vamaislonge)
 
-vamaislonge.escrever_capitulo(1, 'Desvendando os papéis e os segredos da memoria', 'blablablablablabla....')
-vamaislonge.escrever_capitulo(2, '10 técnicas para proteger a memória', 'blublublublublublu...')
-vamaislonge.remover_capitulo(2)
+# vamaislonge.escrever_capitulo(1, 'Desvendando os papéis e os segredos da memoria', 'blablablablablabla....')
+# vamaislonge.escrever_capitulo(2, '10 técnicas para proteger a memória', 'blublublublublublu...')
+# vamaislonge.remover_capitulo(2)
 
-vamaislonge.ver_capitulos()
+# vamaislonge.ver_capitulos()
+
+class Curso:
+    def __init__(self, nome: str):
+        self.nome = nome
+
+
+class Universidade:
+    pass
