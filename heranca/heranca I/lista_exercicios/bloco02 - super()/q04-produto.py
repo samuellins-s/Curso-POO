@@ -3,6 +3,7 @@ class Produto:
         self.nome = nome
         self.preco = preco
 
+
 class Livro(Produto):
     def __init__(self, nome, preco, autor: str, paginas: int) -> None:
         super().__init__(nome, preco)
