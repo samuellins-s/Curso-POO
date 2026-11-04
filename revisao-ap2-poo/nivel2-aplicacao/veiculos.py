@@ -51,7 +51,6 @@ class Locadora:
         return sum(veiculo.calcular_aluguel(dias) for veiculo in self.veiculos)
 
 
-
 # prova que não pode instanciar (está como coment #):
 # veiculo = Veiculo('ABF-2023', 30)
 # print(veiculo)
@@ -65,6 +64,7 @@ locadora = Locadora('Jorginho Locadora')
 locadora.cadastrar_veiculo(carrinho)
 locadora.cadastrar_veiculo(motinha)
 locadora.cadastrar_veiculo(caminhaozao)
+
 print(locadora.faturamento_previsto(2))
 
 for veiculo in locadora.veiculos:
