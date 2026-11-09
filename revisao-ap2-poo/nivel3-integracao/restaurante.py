@@ -13,8 +13,8 @@ Pedido recebe Entregador no init (injeção) - OK
 class Prato:
     def __init__(self, nome: str, qtd_pessoas: int, preco: float) -> None:
         self.nome = nome
-        self.preco = preco
         self.qtd_pessoas = qtd_pessoas
+        self.preco = preco
 
 
 class Cardapio:
@@ -49,9 +49,16 @@ class Pedido:
     def __init__(self, entregador: Entregador) -> None:
         self.entregador = entregador # injecao
         self.itens: list[Item] = []
+
+    def adicionar_item(self, item: Item):
+        self.itens.append(item)
     
-    def total(self, distancia: float) -> float:
+    def total(self, distancia: float, cliente: Cliente) -> float:
         if distancia > self.entregador.limite_distancia:
             raise EntregaForaDeAreaError(f'O entregador {self.entregador.nome} não consegue entregar, o seu limite de entrega é no raio de {self.entregador.limite_distancia} KM')
         subtotais = sum(item.subtotal() for item in self.itens)
-        return subtotais + self.entregador.taxa_entrega(distancia)
+        total = subtotais + self.entregador.taxa_entrega(distancia)
+        print(f'\nPedido do cliente {cliente.nome.upper()}')
+        for item in self.itens:
+            print(f'{item.prato.nome} --- R$ {item.prato.preco} --- Qtd {item.quantidade} --- R$ {item.subtotal()}')
+        print(f'Total da compra: R$ {total:.2f}')
