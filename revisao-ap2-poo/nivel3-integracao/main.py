@@ -1,5 +1,5 @@
-from entregador import DeBike, DeMoto
-from restaurante import Restaurante, Prato, Cardapio, Pedido, Item, Cliente
+from modelo.entregador import DeMoto
+from modelo.restaurante import Restaurante, Prato, Cardapio, Pedido, Item, Cliente
 
 def main():
     hotdog = Prato('Cachorro-Quente', 1, 5.90)
