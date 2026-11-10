@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from entregador import Entregador
 from error import EntregaForaDeAreaError
 
@@ -10,11 +11,11 @@ Pedido recebe Entregador no init (injeção) - OK
 
 '''
 
+@dataclass
 class Prato:
-    def __init__(self, nome: str, qtd_pessoas: int, preco: float) -> None:
-        self.nome = nome
-        self.qtd_pessoas = qtd_pessoas
-        self.preco = preco
+        nome: str 
+        qtd_pessoas: int
+        preco: float
 
 
 class Cardapio:
