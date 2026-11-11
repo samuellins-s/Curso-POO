@@ -17,7 +17,8 @@ class Livro:
         
 
 class Catalogo:
-    def __init__(self) -> None:
+    def __init__(self, nome: str) -> None:
+        self.nome = nome
         self.livros: list[Livro] = []
 
     def adicionar(self, livro: Livro) -> None:
@@ -33,6 +34,15 @@ class Catalogo:
         print('\nListagem de livros do Catálogo: ')
         for livro in self.livros:
             print(livro)
+
+
+class Livraria:
+    def __init__(self, nome: str) -> None:
+        self.nome = nome
+        self.catalogo: Catalogo
+
+    def criar_catalogo(self, nome: str):
+        self.catalogo = Catalogo(nome)
 
 
 livrinhoA = Livro('A', 'Koal', 30, 0.4)
