@@ -29,6 +29,11 @@ class Catalogo:
                 return livro
         return None
 
+    def listar(self) -> None:
+        print('\nListagem de livros do Catálogo: ')
+        for livro in self.livros:
+            print(livro)
+
 
 livrinhoA = Livro('A', 'Koal', 30, 0.4)
 livrinhoB = Livro('B', 'Hoam', 92, 1)
@@ -36,4 +41,5 @@ livrinhoB = Livro('B', 'Hoam', 92, 1)
 catalogo = Catalogo()
 catalogo.adicionar(livrinhoA)
 catalogo.adicionar(livrinhoB)
+catalogo.listar()
 print(catalogo.buscar_por_titulo('A'))
